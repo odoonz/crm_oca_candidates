@@ -9,6 +9,6 @@
     "license": "LGPL-3",
     "author": "Graeme Gellatly",
     "website": "https://o4sb.com",
-    "depends": ["crm", "sales_team",],
+    "depends": ["crm", "sales_team","crm_stage_type"],
     "data": ["security/ir.model.access.csv", "views/crm_team.xml",],
 }
