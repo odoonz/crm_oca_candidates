@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020 Graeme Gellatly
+     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl). -->
+
+<odoo>
+
+    <record model="ir.ui.view" id="crm_team_assign_rule_form_view">
+        <field name="name">crm.team.assign.rule.form (in crm_salesperson_assign)</field>
+        <field name="model">crm.team.assign.rule</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <!-- TODO -->
+                </header>
+                <sheet>
+                    <!-- TODO -->
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter"></div>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="crm_team_assign_rule_search_view">
+        <field name="name">crm.team.assign.rule.search (in crm_salesperson_assign)</field>
+        <field name="model">crm.team.assign.rule</field>
+        <field name="arch" type="xml">
+            <search>
+                <!-- TODO -->
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="crm_team_assign_rule_tree_view">
+        <field name="name">crm.team.assign.rule.tree (in crm_salesperson_assign)</field>
+        <field name="model">crm.team.assign.rule</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- TODO -->
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_crm_team_assign,crm.team.assign,model_crm_team_assign_rule,base.group_user,1,0,0,0
+access_crm_team_user_assign,crm.team.user.assign,model_crm_team_assign_rule,sales_team.group_sale_salesman,1,0,0,0
+access_crm_team_manager_assign,crm.team.manager.assign,model_crm_team_assign_rule,sales_team.group_sale_manager,1,1,1,1

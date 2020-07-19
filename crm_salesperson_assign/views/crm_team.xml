@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020 Graeme Gellatly
+     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl). -->
+
+<odoo>
+
+    <record model="ir.ui.view" id="crm_team_form_view">
+        <field name="name">crm.team.form (in crm_salesperson_assign)</field>
+        <field name="model">crm.team</field>
+        <field name="inherit_id" ref="sales_team.crm_team_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook">
+                <page name="crm_assign" editable="bottom" string="Assigning Rules">
+                    <field name="team_assign_rule_ids" mode="tree,form">
+                        <tree string="Assignation Rules" >
+                            <field name="sequence" widget="handle" />
+                            <field name="stage_to" domain="['|', ('team_id', '=', False), ('team_id', '=', team_id)]" />
+                            <field name="team_id" invisible="1" />
+                            <field name="user_ids" widget="many2many_tags" />
+                            <field name="no_force" />
+                            <field name="filter_domain" />
+                            <field name="assign_method" />
+                        </tree>
+                        <form string="Assignation Rule" >
+                            <field name="sequence" widget="handle" invisible="1" />
+                            <group>
+                                <group>
+                                    <field name="stage_to" domain="['|', ('team_id', '=', False), ('team_id', '=', team_id)]" />
+                                    <field name="team_id" invisible="1" />
+                                </group>
+                                <group>
+                                    <field name="assign_method" />
+                                    <field name="no_force" />
+                                </group>
+                                <group colspan="4">
+                                    <field name="user_ids" widget="many2many_tags" colspan="4"/>
+                                    <field name="filter_domain" widget="domain" options="{'model': 'crm.lead', 'in_dialog': True}" colspan="4"/>
+                                </group>
+                            </group>
+                        </form>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
