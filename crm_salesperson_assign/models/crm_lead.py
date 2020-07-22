@@ -1,7 +1,7 @@
 # Copyright 2020 Graeme Gellatly
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
-from odoo import api, fields, models, _
+from odoo import api, models
 
 
 class CrmLead(models.Model):
@@ -10,9 +10,10 @@ class CrmLead(models.Model):
 
     def _update_salesperson(self):
         for lead in self:
-            salesperson = lead.team_id.get_salesperson(lead, lead.stage_id)
-            if salesperson:
-                lead.user_id = salesperson
+            if lead.team_id:
+                salesperson = lead.team_id.get_salesperson(lead, lead.stage_id)
+                if salesperson:
+                    lead.user_id = salesperson
 
     def write(self, vals):
         res = super().write(vals)
