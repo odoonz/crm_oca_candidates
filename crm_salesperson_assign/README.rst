@@ -6,7 +6,7 @@
 Crm Salesperson Assign
 ======================
 
-Rules to assign salepeople to leads and opportunities
+Rules to assign salespeople to leads and opportunities
 
 Installation
 ============
