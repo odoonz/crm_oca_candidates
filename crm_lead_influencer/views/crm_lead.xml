@@ -10,16 +10,20 @@
         <field name="inherit_id" ref="crm.crm_case_form_view_leads"/>
         <field name="arch" type="xml">
             <page name="extra" position="before">
-                <page name="products" string="Influencers">
+                <page name="influencers" string="Influencers">
                     <field name="influencer_ids">
                         <tree string="Influencers" editable="bottom">
-                            <field name="role_id" widget="selection" />
-                            <field name="partner_id" />
-                            <field name="name" />
-                            <field name="phone" />
-                            <field name="mobile" />
-                            <field name="email" />
-                            <field name="note" />
+                            <field name="sequence" widget="handle"/>
+                            <field name="role_id" options="{'no_create': True, 'no_edit': True, 'no_open': True}"/>
+                                                        <field name="partner_id"
+                                   context="{'default_phone': phone, 'default_email': email, 'default_is_company': False,
+                                   'default_mobile': mobile, 'default_name': contact_name}"/>
+                            <field name="name"/>
+                            <field name="contact_name"/>
+                            <field name="phone"/>
+                            <field name="mobile"/>
+                            <field name="email"/>
+                            <field name="note"/>
                         </tree>
                     </field>
                 </page>
@@ -34,16 +38,20 @@
         <field name="inherit_id" ref="crm.crm_case_form_view_oppor"/>
         <field name="arch" type="xml">
             <page name="lead" position="before">
-                <page name="products" string="Influencers">
+                <page name="influencers" string="Influencers">
                     <field name="influencer_ids">
                         <tree string="Influencers" editable="bottom">
-                            <field name="role_id" widget="selection" />
-                            <field name="partner_id" />
-                            <field name="name" />
-                            <field name="phone" />
-                            <field name="mobile" />
-                            <field name="email" />
-                            <field name="note" />
+                            <field name="sequence" widget="handle"/>
+                            <field name="role_id" options="{'no_create': True, 'no_edit': True, 'no_open': True}"/>
+                            <field name="partner_id"
+                                   context="{'default_phone': phone, 'default_email': email, 'default_is_company': False,
+                                   'default_mobile': mobile, 'default_name': contact_name}"/>
+                            <field name="name"/>
+                            <field name="contact_name"/>
+                            <field name="phone"/>
+                            <field name="mobile"/>
+                            <field name="email"/>
+                            <field name="note"/>
                         </tree>
                     </field>
                 </page>
