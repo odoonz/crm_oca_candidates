@@ -40,3 +40,5 @@ class CrmLead(models.Model):
             return super(CrmLead, self).allocate_salesman(
                 user_ids=user_ids, team_id=team_id
             )
+        else:
+            return True
