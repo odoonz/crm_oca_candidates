@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020 Graeme Gellatly
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record model="ir.ui.view" id="crm_lead_scope_form_view">
+        <field name="name">crm.lead.scope.form (in crm_lead_scope_category)</field>
+        <field name="model">crm.lead.scope</field>
+        <field name="arch" type="xml">
+            <form class="oe_form_configuration">
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" string="Scope name" class="oe_edit_only"/>
+                        <h1><field name="name" placeholder="e.g. Lamps"/></h1>
+                    </div>
+                    <group name="first" col="2">
+                        <field name="parent_id" class="oe_inline"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="crm_lead_scope_search_view">
+        <field name="name">crm.lead.scope.search (in crm_lead_scope_category)</field>
+        <field name="model">crm.lead.scope</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" string="Scopes"/>
+                <field name="parent_id"/>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="crm_lead_scope_tree_view">
+        <field name="name">crm.lead.scope.tree (in crm_lead_scope_category)</field>
+        <field name="model">crm.lead.scope</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="display_name" string="Scopes"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="crm_lead_scope_act_window">
+        <field name="name">Lead Scopes</field>
+        <field name="res_model">crm.lead.scope</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+
+    <record model="ir.ui.menu" id="crm_lead_scope_menu">
+        <field name="name">Lead Scopes</field>
+        <field name="parent_id" ref="crm.crm_menu_config"/>
+        <field name="action" ref="crm_lead_scope_act_window"/>
+        <field name="sequence" eval="16"/>
+    </record>
+
+</odoo>

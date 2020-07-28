@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020 Graeme Gellatly
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record model="ir.ui.view" id="crm_lead_form_view">
+        <field name="name">crm.lead.form (in crm_lead_scope_category)</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_form_view_leads"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='priority']" position="before">
+                <field name="scope_id" />
+            </xpath>
+        </field>
+    </record>
+
+        <record model="ir.ui.view" id="crm_opportunity_form_view">
+        <field name="name">crm.lead.form (in crm_lead_scope_category)</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_form_view_oppor"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='priority']" position="before">
+                <field name="scope_id" />
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="crm_opportunity_search_view">
+        <field name="name">crm.lead.search (in crm_lead_scope_category)</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.view_crm_case_opportunities_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='stage_id']" position="before">
+                <field name="scope_id" />
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="crm_lead_search_view">
+        <field name="name">crm.lead.search (in crm_lead_scope_category)</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.view_crm_case_leads_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='user_id']" position="after">
+                <field name="scope_id" />
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="crm_opportunity_tree_view">
+        <field name="name">crm.lead.tree (in crm_lead_scope_category)</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_tree_view_oppor"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='stage_id']" position="before">
+                <field name="scope_id" />
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="crm_lead_tree_view">
+        <field name="name">crm.lead.tree (in crm_lead_scope_category)</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_tree_view_leads"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='user_id']" position="before">
+                <field name="scope_id" />
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
