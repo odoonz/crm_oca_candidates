@@ -15,14 +15,15 @@
                         <tree string="Influencers" editable="bottom">
                             <field name="sequence" widget="handle"/>
                             <field name="role_id" options="{'no_create': True, 'no_edit': True, 'no_open': True}"/>
-                                                        <field name="partner_id"
+                            <field name="partner_id"
                                    context="{'default_phone': phone, 'default_email': email, 'default_is_company': False,
-                                   'default_mobile': mobile, 'default_name': contact_name}"/>
+                                   'default_mobile': mobile, 'default_name': contact_name, 'default_industry_id': inf_industry_id}"/>
                             <field name="name"/>
                             <field name="contact_name"/>
                             <field name="phone"/>
                             <field name="mobile"/>
                             <field name="email"/>
+                            <field name="inf_industry_id" options="{'no_create': True, 'no_edit': True, 'no_open': True}"/>
                             <field name="note"/>
                         </tree>
                     </field>
@@ -45,12 +46,13 @@
                             <field name="role_id" options="{'no_create': True, 'no_edit': True, 'no_open': True}"/>
                             <field name="partner_id"
                                    context="{'default_phone': phone, 'default_email': email, 'default_is_company': False,
-                                   'default_mobile': mobile, 'default_name': contact_name}"/>
+                                   'default_mobile': mobile, 'default_name': contact_name, 'default_industry_id': inf_industry_id}"/>
                             <field name="name"/>
                             <field name="contact_name"/>
                             <field name="phone"/>
                             <field name="mobile"/>
                             <field name="email"/>
+                            <field name="inf_industry_id" options="{'no_create': True, 'no_edit': True, 'no_open': True}"/>
                             <field name="note"/>
                         </tree>
                     </field>

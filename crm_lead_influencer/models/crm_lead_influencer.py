@@ -13,6 +13,9 @@ class CrmLeadInfluencer(models.Model):
     lead_id = fields.Many2one("crm.lead", string="Lead")
     role_id = fields.Many2one("crm.lead.influencer.role", string="Role")
     partner_id = fields.Many2one("res.partner", string="Partner")
+    # Note the strange field name is to avoid conflicts with xml replacements
+    # in unrelated modules industry_id fields
+    inf_industry_id = fields.Many2one("res.partner.industry", "Expertise")
     phone = fields.Char("Phone")
     mobile = fields.Char("Mobile")
     name = fields.Char(string="Company Name")
@@ -29,3 +32,4 @@ class CrmLeadInfluencer(models.Model):
             self.contact_name = self.partner_id.name
             self.name = self.partner_id.parent_id.name
             self.email = self.partner_id.email
+            self.industry_id = self.partner_id.industry_id or self.industry_id

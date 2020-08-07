@@ -5,7 +5,7 @@
     "name": "Crm Lead Influencer",
     "description": """
         Allows to specify other involved contacts and their role in lead""",
-    "version": "12.0.1.0.0",
+    "version": "12.0.1.1.0",
     "license": "AGPL-3",
     "author": "Graeme Gellatly",
     "website": "https://o4sb.com",
